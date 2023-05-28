@@ -14,3 +14,6 @@ summon item ~7.5 ~31 ~7.5 {CustomNameVisible:1b,PickupDelay:32767,Tags:["sdmc.di
 
 # Display Arrow (Level 5)
 summon item ~2.5 ~1 ~19.5 {CustomNameVisible:1b,PickupDelay:32767,Tags:["sdmc.display-item sdmc.display-arrow"],CustomName:'{"text":"Arrow"}',Item:{id:"minecraft:arrow",Count:1b}}
+
+
+# TODO: Add plot name display text and/or credits
