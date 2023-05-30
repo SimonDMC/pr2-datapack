@@ -2,5 +2,8 @@
 # It will run in your plot on the center block at Y=0
 # Use this to reset your plot and get rid of any laggy entities
 
-### Remove display items
+# Remove display items
 kill @e[tag=sdmc.display-item]
+
+# Remove pond axolotl
+kill @e[tag=sdmc.pond-axolotl]
