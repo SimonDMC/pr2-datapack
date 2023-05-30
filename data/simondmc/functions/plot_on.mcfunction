@@ -17,5 +17,6 @@ summon item ~2 ~1 ~19 {CustomNameVisible:1b,PickupDelay:32767,Age:-32768,Tags:["
 # Create necessary scoreboards
 scoreboard objectives add sdmc.item-timer dummy
 scoreboard objectives add sdmc.arrow-timer dummy
+scoreboard objectives add sdmc.sys dummy
 
 # TODO: Add plot name display text and/or credits

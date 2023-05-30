@@ -1,3 +1,5 @@
+### Replaces a player's crossbow by clearing it and giving a fresh, pre-loaded one, with sound effect
+# Called by lvl2/tick
 execute at @s run playsound item.crossbow.loading_start master @s
 execute at @s run playsound item.crossbow.loading_middle master @s
 execute at @s run playsound item.crossbow.loading_end master @s
