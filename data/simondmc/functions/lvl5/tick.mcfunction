@@ -20,6 +20,8 @@ execute if score sdmc.tnt sdmc.sys matches 20 run setblock ~-4 ~11 ~14 air
 execute if score sdmc.tnt sdmc.sys matches 25 run setblock ~-4 ~12 ~14 air
 execute if score sdmc.tnt sdmc.sys matches 30 run setblock ~-4 ~13 ~14 air
 execute if score sdmc.tnt sdmc.sys matches 35 run setblock ~-4 ~14 ~14 air
+# Temporary box to prevent shooting animated tnt
+execute if score sdmc.tnt sdmc.sys matches 140 run fill ~-3 ~11 ~15 ~-5 ~14 ~13 barrier
 execute if score sdmc.tnt sdmc.sys matches 140 run setblock ~-4 ~14 ~14 tnt
 execute if score sdmc.tnt sdmc.sys matches 145 run setblock ~-4 ~13 ~14 tnt
 execute if score sdmc.tnt sdmc.sys matches 145 run setblock ~-4 ~14 ~14 chain
@@ -29,4 +31,5 @@ execute if score sdmc.tnt sdmc.sys matches 155 run setblock ~-4 ~11 ~14 tnt
 execute if score sdmc.tnt sdmc.sys matches 155 run setblock ~-4 ~12 ~14 chain
 execute if score sdmc.tnt sdmc.sys matches 160 run setblock ~-4 ~10 ~14 tnt
 execute if score sdmc.tnt sdmc.sys matches 160 run setblock ~-4 ~11 ~14 chain
+execute if score sdmc.tnt sdmc.sys matches 160 run fill ~-3 ~11 ~15 ~-5 ~14 ~13 air replace barrier
 execute if score sdmc.tnt sdmc.sys matches 160 run scoreboard players reset sdmc.tnt sdmc.sys
