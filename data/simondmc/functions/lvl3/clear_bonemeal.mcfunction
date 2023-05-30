@@ -1,7 +1,7 @@
 ### Clears a player's bonemeal, plays a sound effect and replenishes both the barrel and the dripleaf
 # Called by lvl3/tick
-playsound block.fire.extinguish master @s
+execute at @s run playsound block.fire.extinguish master @s
 function simondmc:lvl3/reset_barrel
-# line below doesn't work
-setblock ~27 ~26 ~20 big_dripleaf[tilt=none]
+setblock ~27 ~26 ~20 big_dripleaf
+setblock ~27 ~25 ~17 big_dripleaf
 clear @s bone_meal
