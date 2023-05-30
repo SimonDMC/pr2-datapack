@@ -20,5 +20,5 @@ tag @a[tag=sdmc.in-plot] remove sdmc.on-basalt
 
 # Prevent one player from having multiple bone meals
 execute as @a[tag=sdmc.in-plot] store result score @s sdmc.bone-meal run clear @s bone_meal 0
-# Remove them one tick at a time
+# Remove one every tick
 execute as @a[tag=sdmc.in-plot] if score @s sdmc.bone-meal matches 2.. run clear @s bone_meal 1
