@@ -15,5 +15,9 @@ scoreboard objectives add sdmc.sys dummy
 scoreboard objectives add sdmc.item-timer dummy
 scoreboard objectives add sdmc.arrow-timer dummy
 scoreboard objectives add sdmc.axolotl-timer dummy
+scoreboard objectives add sdmc.bone-meal dummy
+
+# Scoreboard constants
+scoreboard players set sdmc.const.1 sdmc.bone-meal 1
 
 # TODO: Add plot name display text and/or credits
