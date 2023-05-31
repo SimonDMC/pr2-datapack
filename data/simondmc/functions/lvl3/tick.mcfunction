@@ -15,6 +15,7 @@ execute if score sdmc.leaf sdmc.sys matches 20.. run scoreboard players reset sd
 # (tagged to preserve location at plot origin)
 execute as @a[tag=sdmc.in-plot,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ smooth_basalt run tag @s add sdmc.on-basalt
 execute as @a[tag=sdmc.in-plot,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ basalt run tag @s add sdmc.on-basalt
+execute as @a[tag=sdmc.in-plot,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ mud run tag @s add sdmc.on-basalt
 execute as @a[tag=sdmc.in-plot,tag=sdmc.on-basalt] run function simondmc:lvl3/clear_bone_meal
 tag @a[tag=sdmc.in-plot] remove sdmc.on-basalt
 
