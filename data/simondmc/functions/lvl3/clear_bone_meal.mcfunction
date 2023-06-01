@@ -2,6 +2,5 @@
 # Called by lvl3/tick
 execute at @s run playsound block.fire.extinguish master @s
 function simondmc:lvl3/reset_barrel
-setblock ~27 ~26 ~20 big_dripleaf
 setblock ~27 ~25 ~17 big_dripleaf
 clear @s bone_meal

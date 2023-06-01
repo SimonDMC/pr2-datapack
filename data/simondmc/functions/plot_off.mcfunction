@@ -5,5 +5,8 @@
 # Remove display items
 kill @e[tag=sdmc.display-item]
 
+# Remove display item names
+kill @e[tag=sdmc.display-name]
+
 # Remove pond axolotl
 kill @e[tag=sdmc.pond-axolotl]

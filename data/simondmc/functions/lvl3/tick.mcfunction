@@ -23,3 +23,12 @@ tag @a[tag=sdmc.in-plot] remove sdmc.on-basalt
 execute as @a[tag=sdmc.in-plot] store result score @s sdmc.bone-meal run clear @s bone_meal 0
 # Remove one every tick
 execute as @a[tag=sdmc.in-plot] if score @s sdmc.bone-meal matches 2.. run clear @s bone_meal 1
+
+# Slow second dripleaf descent
+execute positioned ~26.5 ~26 ~19.5 if entity @a[tag=sdmc.in-plot,dx=1,dy=1,dz=1] run scoreboard players add sdmc.slow-leaf sdmc.sys 1
+# Make sure player doesn't fall through due to actual dripleaf descent
+execute if score sdmc.slow-leaf sdmc.sys matches ..40 if block ~27 ~26 ~20 big_dripleaf[tilt=full] positioned ~26.5 ~26 ~19.5 as @a[tag=sdmc.in-plot,dx=1,dy=1,dz=1] at @s run tp @s ~ ~.2 ~
+execute unless score sdmc.slow-leaf sdmc.sys matches 20.. run setblock ~27 ~26 ~20 big_dripleaf
+execute if score sdmc.slow-leaf sdmc.sys matches 20..40 run setblock ~27 ~26 ~20 big_dripleaf[tilt=partial]
+execute if score sdmc.slow-leaf sdmc.sys matches 41.. run setblock ~27 ~26 ~20 big_dripleaf[tilt=full]
+execute positioned ~27 ~27 ~20 unless entity @a[tag=sdmc.in-plot,distance=..2] run scoreboard players reset sdmc.slow-leaf sdmc.sys
