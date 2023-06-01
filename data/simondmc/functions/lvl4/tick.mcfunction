@@ -15,3 +15,6 @@ execute if score sdmc.axolotl sdmc.sys matches 20.. run scoreboard players reset
 scoreboard players add @e[type=axolotl,tag=sdmc.in-plot,tag=!sdmc.pond-axolotl] sdmc.axolotl-timer 1
 execute as @e[type=axolotl,tag=sdmc.in-plot,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. run setblock ~11 ~31 ~14 big_dripleaf[facing=east,tilt=full]
 execute as @e[type=axolotl,tag=sdmc.in-plot,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. run kill @s
+
+# Make sure you can't steal waterfall
+setblock ~14 ~32 ~22 water
