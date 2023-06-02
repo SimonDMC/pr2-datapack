@@ -6,11 +6,10 @@ execute as @a[tag=pr.target,nbt=!{Inventory:[{id:"minecraft:arrow"}]}] at @s if 
 # Flaming arrows
 execute as @e[type=arrow,tag=pr.target] run data merge entity @s {Fire:1000}
 
-# Replenish dripleaf at set time
+# TNT timer
 execute if entity @e[type=tnt,tag=pr.target] run scoreboard players add sdmc.tnt sdmc.sys 1
 # Continue timer even after TNT explodes
 execute if score sdmc.tnt sdmc.sys matches 1.. unless entity @e[type=tnt,tag=pr.target] run scoreboard players add sdmc.tnt sdmc.sys 1
-execute if score sdmc.tnt sdmc.sys matches 100 run setblock ~-4 ~3 ~14 big_dripleaf[facing=east]
 
 # Double TNT boost
 execute at @e[type=tnt,tag=pr.target,nbt={Fuse:1s}] run summon tnt
@@ -20,6 +19,10 @@ execute if score sdmc.tnt sdmc.sys matches 20 run setblock ~-4 ~11 ~14 air
 execute if score sdmc.tnt sdmc.sys matches 25 run setblock ~-4 ~12 ~14 air
 execute if score sdmc.tnt sdmc.sys matches 30 run setblock ~-4 ~13 ~14 air
 execute if score sdmc.tnt sdmc.sys matches 35 run setblock ~-4 ~14 ~14 air
+execute if score sdmc.tnt sdmc.sys matches 80 run fill ~-8 ~5 ~14 ~-7 ~8 ~12 barrier replace structure_void
+# Replenish dripleaf in time
+execute if score sdmc.tnt sdmc.sys matches 100 run setblock ~-4 ~3 ~14 big_dripleaf[facing=east]
+execute if score sdmc.tnt sdmc.sys matches 100 run fill ~-8 ~5 ~14 ~-7 ~8 ~12 structure_void replace barrier
 # Temporary box to prevent shooting animated tnt
 execute if score sdmc.tnt sdmc.sys matches 140 run fill ~-3 ~11 ~15 ~-5 ~14 ~13 barrier
 execute if score sdmc.tnt sdmc.sys matches 140 run setblock ~-4 ~14 ~14 tnt
