@@ -13,22 +13,22 @@ execute if score sdmc.leaf sdmc.sys matches 20.. run scoreboard players reset sd
 
 # Clear bone meal while standing on basalt/smooth basalt
 # (tagged to preserve location at plot origin)
-execute as @a[tag=sdmc.in-plot,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ smooth_basalt run tag @s add sdmc.on-basalt
-execute as @a[tag=sdmc.in-plot,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ basalt run tag @s add sdmc.on-basalt
-execute as @a[tag=sdmc.in-plot,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ mud run tag @s add sdmc.on-basalt
-execute as @a[tag=sdmc.in-plot,tag=sdmc.on-basalt] run function simondmc:lvl3/clear_bone_meal
-tag @a[tag=sdmc.in-plot] remove sdmc.on-basalt
+execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ smooth_basalt run tag @s add sdmc.on-basalt
+execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ basalt run tag @s add sdmc.on-basalt
+execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ mud run tag @s add sdmc.on-basalt
+execute as @a[tag=pr.target,tag=sdmc.on-basalt] run function simondmc:lvl3/clear_bone_meal
+tag @a[tag=pr.target] remove sdmc.on-basalt
 
 # Prevent one player from having multiple bone meals
-execute as @a[tag=sdmc.in-plot] store result score @s sdmc.bone-meal run clear @s bone_meal 0
+execute as @a[tag=pr.target] store result score @s sdmc.bone-meal run clear @s bone_meal 0
 # Remove one every tick
-execute as @a[tag=sdmc.in-plot] if score @s sdmc.bone-meal matches 2.. run clear @s bone_meal 1
+execute as @a[tag=pr.target] if score @s sdmc.bone-meal matches 2.. run clear @s bone_meal 1
 
 # Slow second dripleaf descent
-execute positioned ~26.5 ~26 ~19.5 if entity @a[tag=sdmc.in-plot,dx=1,dy=1,dz=1] run scoreboard players add sdmc.slow-leaf sdmc.sys 1
+execute positioned ~26.5 ~26 ~19.5 if entity @a[tag=pr.target,dx=1,dy=1,dz=1] run scoreboard players add sdmc.slow-leaf sdmc.sys 1
 # Make sure player doesn't fall through due to actual dripleaf descent
-execute if score sdmc.slow-leaf sdmc.sys matches ..40 if block ~27 ~26 ~20 big_dripleaf[tilt=full] positioned ~26.5 ~26 ~19.5 as @a[tag=sdmc.in-plot,dx=1,dy=1,dz=1] at @s run tp @s ~ ~.2 ~
+execute if score sdmc.slow-leaf sdmc.sys matches ..40 if block ~27 ~26 ~20 big_dripleaf[tilt=full] positioned ~26.5 ~26 ~19.5 as @a[tag=pr.target,dx=1,dy=1,dz=1] at @s run tp @s ~ ~.2 ~
 execute unless score sdmc.slow-leaf sdmc.sys matches 20.. run setblock ~27 ~26 ~20 big_dripleaf
 execute if score sdmc.slow-leaf sdmc.sys matches 20..40 run setblock ~27 ~26 ~20 big_dripleaf[tilt=partial]
 execute if score sdmc.slow-leaf sdmc.sys matches 41.. run setblock ~27 ~26 ~20 big_dripleaf[tilt=full]
-execute positioned ~27 ~27 ~20 unless entity @a[tag=sdmc.in-plot,distance=..2] run scoreboard players reset sdmc.slow-leaf sdmc.sys
+execute positioned ~27 ~27 ~20 unless entity @a[tag=pr.target,distance=..2] run scoreboard players reset sdmc.slow-leaf sdmc.sys
