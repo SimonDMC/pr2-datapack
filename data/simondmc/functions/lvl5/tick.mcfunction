@@ -32,7 +32,6 @@ execute if score sdmc.tnt sdmc.sys matches 155 run setblock ~-4 ~11 ~14 tnt
 execute if score sdmc.tnt sdmc.sys matches 155 run setblock ~-4 ~12 ~14 chain
 execute if score sdmc.tnt sdmc.sys matches 160 run setblock ~-4 ~10 ~14 tnt
 execute if score sdmc.tnt sdmc.sys matches 160 run setblock ~-4 ~11 ~14 chain
-execute if score sdmc.tnt sdmc.sys matches 160 run scoreboard players reset sdmc.tnt sdmc.sys
 
 # Replenish dripleaf in time for player to land on and jump off of
 execute if score sdmc.tnt sdmc.sys matches 100 run setblock ~-4 ~3 ~14 big_dripleaf[facing=east]
@@ -44,3 +43,6 @@ execute if score sdmc.tnt sdmc.sys matches 160 run fill ~-3 ~11 ~15 ~-5 ~14 ~13 
 # Block off exit between TNT explosion and dripleaf replenishing to prevent being boosted by TNT directly into exit
 execute if score sdmc.tnt sdmc.sys matches 80 run fill ~-8 ~5 ~14 ~-7 ~8 ~12 barrier replace structure_void
 execute if score sdmc.tnt sdmc.sys matches 100 run fill ~-8 ~5 ~14 ~-7 ~8 ~12 structure_void replace barrier
+
+# Reset timer after animation finishes
+execute if score sdmc.tnt sdmc.sys matches 160 run scoreboard players reset sdmc.tnt sdmc.sys
