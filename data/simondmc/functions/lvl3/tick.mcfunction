@@ -12,7 +12,7 @@ execute if score sdmc.leaf sdmc.sys matches 30.. run setblock ~27 ~25 ~17 big_dr
 execute if score sdmc.leaf sdmc.sys matches 30.. run scoreboard players reset sdmc.leaf sdmc.sys
 
 # Clear bone meal while standing on basalt/smooth basalt
-# (tagged to preserve location at plot origin)
+# (tagged to preserve execute location at plot origin)
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ smooth_basalt run tag @s add sdmc.on-basalt
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ basalt run tag @s add sdmc.on-basalt
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ mud run tag @s add sdmc.on-basalt
