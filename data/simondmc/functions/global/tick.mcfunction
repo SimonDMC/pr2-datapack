@@ -4,10 +4,14 @@
 #execute positioned ~-39 ~-63 ~-39 as @e[dx=78,dy=137,dz=78] run tag @s add sdmc.in-plot
 
 # Quick item pickup
-execute as @e[type=item,tag=pr.target] store result score @s sdmc.item-timer run data get entity @s PickupDelay
-execute as @e[type=item,tag=pr.target,tag=!sdmc.display-item] unless score @s sdmc.item-timer matches ..10 run data merge entity @s {PickupDelay:10}
+execute as @e[type=item,tag=pr.target] store result score @s sdmc.item-pickup-timer run data get entity @s PickupDelay
+execute as @e[type=item,tag=pr.target,tag=!sdmc.display-item] unless score @s sdmc.item-pickup-timer matches ..10 run data merge entity @s {PickupDelay:10}
 
-# Remove ground items near display items
+# Despawn items after 10 seconds
+execute as @e[type=item,tag=pr.target,tag=!sdmc.display-item] run scoreboard players add @s sdmc.item-despawn-timer 1
+execute as @e[type=item,tag=pr.target,tag=!sdmc.display-item] if score @s sdmc.item-despawn-timer matches 200.. run kill @s
+
+# Remove ground items of that type near display items
 execute at @e[type=item,tag=pr.target,tag=sdmc.display-bucket] run kill @e[type=item,tag=pr.target,distance=..3,tag=!sdmc.display-item,nbt={Item:{id:"minecraft:bucket"}}]
 execute at @e[type=item,tag=pr.target,tag=sdmc.display-crossbow] run kill @e[type=item,tag=pr.target,distance=..3,tag=!sdmc.display-item,nbt={Item:{id:"minecraft:crossbow"}}]
 execute at @e[type=item,tag=pr.target,tag=sdmc.display-arrow] run kill @e[type=item,tag=pr.target,distance=..3,tag=!sdmc.display-item,nbt={Item:{id:"minecraft:arrow"}}]

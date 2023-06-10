@@ -15,7 +15,8 @@ summon text_display ~2 ~1.65 ~19 {billboard:"center",default_background:1b,text:
 
 # Create necessary scoreboards
 scoreboard objectives add sdmc.sys dummy
-scoreboard objectives add sdmc.item-timer dummy
+scoreboard objectives add sdmc.item-pickup-timer dummy
+scoreboard objectives add sdmc.item-despawn-timer dummy
 scoreboard objectives add sdmc.arrow-timer dummy
 scoreboard objectives add sdmc.axolotl-timer dummy
 scoreboard objectives add sdmc.bone-meal dummy
