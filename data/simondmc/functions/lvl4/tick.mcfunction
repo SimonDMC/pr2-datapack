@@ -16,7 +16,10 @@ execute at @e[type=axolotl,tag=pr.target,tag=sdmc.pond-axolotl] as @a[distance=.
 
 # Remove door axolotl and water after two seconds
 scoreboard players add @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] sdmc.axolotl-timer 1
-execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. run setblock ~11 ~31 ~14 big_dripleaf[facing=east,tilt=full]
+execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. if block ~11 ~31 ~14 big_dripleaf[tilt=none] run setblock ~11 ~31 ~14 big_dripleaf[facing=east,tilt=none]
+execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. if block ~11 ~31 ~14 big_dripleaf[tilt=unstable] run setblock ~11 ~31 ~14 big_dripleaf[facing=east,tilt=unstable]
+execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. if block ~11 ~31 ~14 big_dripleaf[tilt=partial] run setblock ~11 ~31 ~14 big_dripleaf[facing=east,tilt=partial]
+execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. if block ~11 ~31 ~14 big_dripleaf[tilt=full] run setblock ~11 ~31 ~14 big_dripleaf[facing=east,tilt=full]
 execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. run kill @s
 
 # Make sure you can't steal waterfall
