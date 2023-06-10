@@ -13,7 +13,7 @@ item replace block ~27 ~32 ~22 container.9 with air
 item replace block ~27 ~32 ~22 container.10 with air
 item replace block ~27 ~32 ~22 container.11 with air
 item replace block ~27 ~32 ~22 container.12 with air
-item replace block ~27 ~32 ~22 container.13 with bone_meal{CanPlaceOn:["minecraft:big_dripleaf"]}
+item replace block ~27 ~32 ~22 container.13 with bone_meal{display:{Name:'{"text":"Shriveled Bone Meal","italic":false}'},CanPlaceOn:["minecraft:big_dripleaf"]}
 item replace block ~27 ~32 ~22 container.14 with air
 item replace block ~27 ~32 ~22 container.15 with air
 item replace block ~27 ~32 ~22 container.16 with air
