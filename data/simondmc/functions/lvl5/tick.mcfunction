@@ -1,7 +1,10 @@
 ### Level 5
 
+# Give back crossbow while picking up arrow if player somehow lost it
+execute at @e[tag=pr.target,tag=sdmc.display-arrow] as @a[distance=..1,tag=pr.target,nbt=!{Inventory:[{id:"minecraft:crossbow"}]}] run give @s crossbow{display:{Lore:['{"text":"Flame","color":"gray","italic":false}']},HideFlags:37,Unbreakable:1b,Enchantments:[{id:"minecraft:quick_charge",lvl:3s}]}
+
 # Pick up arrow
-execute as @a[tag=pr.target,nbt=!{Inventory:[{id:"minecraft:arrow"}]}] at @s if entity @e[tag=pr.target,tag=sdmc.display-arrow,distance=..1] run give @s arrow
+execute at @e[tag=pr.target,tag=sdmc.display-arrow] as @a[distance=..1,tag=pr.target,nbt=!{Inventory:[{id:"minecraft:arrow"}]}] run give @s arrow
 
 # Flaming arrows
 execute as @e[type=arrow,tag=pr.target] run data merge entity @s {Fire:1000}

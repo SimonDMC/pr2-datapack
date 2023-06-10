@@ -11,6 +11,9 @@ execute positioned ~12 ~29 ~16 unless entity @e[type=axolotl,dx=5,dy=4,dz=6,tag=
 execute if score sdmc.axolotl sdmc.sys matches 20.. run summon axolotl ~14 ~29 ~19 {Tags:["sdmc.pond-axolotl"],Invulnerable:1b}
 execute if score sdmc.axolotl sdmc.sys matches 20.. run scoreboard players reset sdmc.axolotl sdmc.sys
 
+# Give back bucket when near axolotl if player somehow lost it
+execute at @e[type=axolotl,tag=pr.target,tag=sdmc.pond-axolotl] as @a[distance=..3,tag=pr.target,nbt=!{Inventory:[{id:"minecraft:bucket"}]},nbt=!{Inventory:[{id:"minecraft:water_bucket"}]},nbt=!{Inventory:[{id:"minecraft:axolotl_bucket"}]}] run give @s bucket{CanPlaceOn:["minecraft:water"]}
+
 # Remove door axolotl and water after two seconds
 scoreboard players add @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] sdmc.axolotl-timer 1
 execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. run setblock ~11 ~31 ~14 big_dripleaf[facing=east,tilt=full]
