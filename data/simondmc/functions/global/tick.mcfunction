@@ -22,6 +22,9 @@ execute at @e[type=axolotl,tag=pr.target,tag=sdmc.pond-axolotl] run kill @e[type
 execute at @e[type=axolotl,tag=pr.target,tag=sdmc.pond-axolotl] run kill @e[type=item,tag=pr.target,distance=..5,tag=!sdmc.display-item,nbt={Item:{id:"minecraft:axolotl_bucket"}}]
 execute at @e[type=item,tag=pr.target,tag=sdmc.display-arrow] run kill @e[type=item,tag=pr.target,distance=..3,tag=!sdmc.display-item,nbt={Item:{id:"minecraft:crossbow"}}]
 
+# Make sure player doesn't have >1 of any item
+execute as @a[tag=pr.target] run function simondmc:global/item_limit
+
 # Kill ground arrows after a few ticks
 execute as @e[type=arrow,tag=pr.target,nbt={inGround:1b}] run scoreboard players add @s sdmc.arrow-timer 1
 execute as @e[type=arrow,tag=pr.target] if score @s sdmc.arrow-timer matches 5.. run kill @s

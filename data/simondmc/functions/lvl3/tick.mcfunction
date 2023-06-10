@@ -19,11 +19,6 @@ execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s 
 execute as @a[tag=pr.target,tag=sdmc.on-basalt] run function simondmc:lvl3/clear_bone_meal
 tag @a[tag=pr.target] remove sdmc.on-basalt
 
-# Prevent one player from having multiple bone meals
-execute as @a[tag=pr.target] store result score @s sdmc.bone-meal run clear @s bone_meal 0
-# Remove one every tick
-execute as @a[tag=pr.target] if score @s sdmc.bone-meal matches 2.. run clear @s bone_meal 1
-
 # Slow second dripleaf descent
 # (this system was put in place as a difficulty nerf due to the maneuver being way too difficult)
 execute positioned ~26.5 ~26 ~19.5 if entity @a[tag=pr.target,dx=1,dy=1,dz=1] run scoreboard players add sdmc.slow-leaf sdmc.sys 1

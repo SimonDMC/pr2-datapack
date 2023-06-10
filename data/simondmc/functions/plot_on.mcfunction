@@ -19,9 +19,9 @@ scoreboard objectives add sdmc.item-pickup-timer dummy
 scoreboard objectives add sdmc.item-despawn-timer dummy
 scoreboard objectives add sdmc.arrow-timer dummy
 scoreboard objectives add sdmc.axolotl-timer dummy
-scoreboard objectives add sdmc.bone-meal dummy
+scoreboard objectives add sdmc.item-counter dummy
 
 # Scoreboard constants
-scoreboard players set sdmc.const.1 sdmc.bone-meal 1
+scoreboard players set sdmc.const.1 sdmc.item-counter 1
 
 # TODO: Add plot name display text and/or credits
