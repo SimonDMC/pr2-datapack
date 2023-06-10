@@ -5,11 +5,11 @@ execute unless block ~27 ~32 ~22 barrel{Items:[{Slot:13b}]} run scoreboard playe
 execute if score sdmc.barrel sdmc.sys matches 20.. run function simondmc:lvl3/reset_barrel
 execute if score sdmc.barrel sdmc.sys matches 20.. run scoreboard players reset sdmc.barrel sdmc.sys
 
-# Reset dripleaf after a second of it being "extended"
+# Reset dripleaf after 1.5 seconds of it being "extended"
 execute if block ~27 ~26 ~17 big_dripleaf run scoreboard players add sdmc.leaf sdmc.sys 1
-execute if score sdmc.leaf sdmc.sys matches 20.. run setblock ~27 ~26 ~17 air
-execute if score sdmc.leaf sdmc.sys matches 20.. run setblock ~27 ~25 ~17 big_dripleaf
-execute if score sdmc.leaf sdmc.sys matches 20.. run scoreboard players reset sdmc.leaf sdmc.sys
+execute if score sdmc.leaf sdmc.sys matches 30.. run setblock ~27 ~26 ~17 air
+execute if score sdmc.leaf sdmc.sys matches 30.. run setblock ~27 ~25 ~17 big_dripleaf
+execute if score sdmc.leaf sdmc.sys matches 30.. run scoreboard players reset sdmc.leaf sdmc.sys
 
 # Clear bone meal while standing on basalt/smooth basalt
 # (tagged to preserve location at plot origin)
