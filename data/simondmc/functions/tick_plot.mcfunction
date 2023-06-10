@@ -7,5 +7,9 @@ function simondmc:lvl3/tick
 function simondmc:lvl4/tick
 function simondmc:lvl5/tick
 
+# Tick start/end functions
+function simondmc:start/tick
+function simondmc:end/tick
+
 # Global ticking function
 function simondmc:global/tick

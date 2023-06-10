@@ -20,6 +20,8 @@ scoreboard objectives add sdmc.item-despawn-timer dummy
 scoreboard objectives add sdmc.arrow-timer dummy
 scoreboard objectives add sdmc.axolotl-timer dummy
 scoreboard objectives add sdmc.item-counter dummy
+scoreboard objectives add sdmc.start-jingle dummy
+scoreboard objectives add sdmc.end-jingle dummy
 
 # Scoreboard constants
 scoreboard players set sdmc.const.1 sdmc.item-counter 1

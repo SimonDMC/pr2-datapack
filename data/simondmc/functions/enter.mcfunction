@@ -10,4 +10,5 @@ effect give @s night_vision infinite 0 true
 effect give @s resistance infinite 9 true
 # (saturation is in core)
 
-# TODO: Maybe some introductory message/jingle?
+# Starting jingle
+scoreboard players set @s sdmc.start-jingle 0
