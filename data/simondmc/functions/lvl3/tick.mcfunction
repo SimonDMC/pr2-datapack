@@ -16,6 +16,8 @@ execute if score sdmc.leaf sdmc.sys matches 30.. run scoreboard players reset sd
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ smooth_basalt run tag @s add sdmc.on-basalt
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ basalt run tag @s add sdmc.on-basalt
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ mud run tag @s add sdmc.on-basalt
+# Also clear if standing in a structure void (above edges of basalt, no easy way of detecting otherwise)
+execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~ ~ structure_void run tag @s add sdmc.on-basalt
 execute as @a[tag=pr.target,tag=sdmc.on-basalt] run function simondmc:lvl3/clear_bone_meal
 tag @a[tag=pr.target] remove sdmc.on-basalt
 
@@ -28,3 +30,6 @@ execute unless score sdmc.slow-leaf sdmc.sys matches 20.. run setblock ~27 ~26 ~
 execute if score sdmc.slow-leaf sdmc.sys matches 20..40 run setblock ~27 ~26 ~20 big_dripleaf[tilt=partial]
 execute if score sdmc.slow-leaf sdmc.sys matches 41.. run setblock ~27 ~26 ~20 big_dripleaf[tilt=full]
 execute positioned ~27 ~27 ~20 unless entity @a[tag=pr.target,distance=..2] run scoreboard players reset sdmc.slow-leaf sdmc.sys
+
+# Make bone meal undroppable
+execute as @e[type=item,tag=pr.target,tag=!sdmc.display-item,nbt={Item:{id:"minecraft:bone_meal"}}] run data merge entity @s {PickupDelay:0}
