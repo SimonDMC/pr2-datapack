@@ -1,8 +1,5 @@
 ### Global
 
-# Give in-plot tag to all entities in plot (temporary until dom fixes core)
-#execute positioned ~-39 ~-63 ~-39 as @e[dx=78,dy=137,dz=78] run tag @s add sdmc.in-plot
-
 # Quick item pickup
 execute as @e[type=item,tag=pr.target] store result score @s sdmc.item-pickup-timer run data get entity @s PickupDelay
 execute as @e[type=item,tag=pr.target,tag=!sdmc.display-item] unless score @s sdmc.item-pickup-timer matches ..10 run data merge entity @s {PickupDelay:10}

@@ -1,2 +1,0 @@
-In plot:
-positioned ~-39 ~-63 ~-39; [dx=78,dy=137,dz=78] 
