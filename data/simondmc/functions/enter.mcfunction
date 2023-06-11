@@ -6,7 +6,6 @@ clear @s
 effect give @s instant_health 1 10 true
 
 # Give effects for plot
-effect give @s night_vision infinite 0 true
 effect give @s resistance infinite 9 true
 # (saturation is in core)
 
