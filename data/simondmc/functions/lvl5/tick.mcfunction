@@ -48,9 +48,3 @@ execute if score sdmc.tnt sdmc.sys matches 100 run fill ~-8 ~5 ~14 ~-7 ~8 ~12 st
 
 # Reset timer after animation finishes
 execute if score sdmc.tnt sdmc.sys matches 160 run scoreboard players reset sdmc.tnt sdmc.sys
-
-# Make sure smuggled axolotls cannot grief level
-execute if block ~-4 ~3 ~14 big_dripleaf[tilt=none,waterlogged=true] run setblock ~-4 ~3 ~14 big_dripleaf[tilt=none,facing=east]
-execute if block ~-4 ~3 ~14 big_dripleaf[tilt=unstable,waterlogged=true] run setblock ~-4 ~3 ~14 big_dripleaf[tilt=unstable,facing=east]
-execute if block ~-4 ~3 ~14 big_dripleaf[tilt=partial,waterlogged=true] run setblock ~-4 ~3 ~14 big_dripleaf[tilt=partial,facing=east]
-execute if block ~-4 ~3 ~14 big_dripleaf[tilt=full,waterlogged=true] run setblock ~-4 ~3 ~14 big_dripleaf[tilt=full,facing=east]
