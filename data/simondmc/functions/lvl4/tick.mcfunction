@@ -22,8 +22,9 @@ execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdm
 execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. if block ~11 ~31 ~14 big_dripleaf[tilt=full] run setblock ~11 ~31 ~14 big_dripleaf[facing=east,tilt=full]
 execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdmc.axolotl-timer matches 40.. run kill @s
 
-# Make sure you can't steal waterfall
+# Prevent stealing waterfall
 setblock ~14 ~32 ~22 water
+setblock ~14 ~33 ~23 water
 
 # Prevent skipping level by smuggling a loaded crossbow out of level 2
 execute positioned ~11 ~31 ~14 run kill @e[type=arrow,tag=pr.target,distance=..3]
