@@ -16,6 +16,10 @@ execute if entity @e[type=tnt,tag=pr.target] run scoreboard players add sdmc.tnt
 # Continue timer even after TNT explodes
 execute if score sdmc.tnt sdmc.sys matches 1.. unless entity @e[type=tnt,tag=pr.target] run scoreboard players add sdmc.tnt sdmc.sys 1
 
+# Reset sideways TNT motion
+execute as @e[type=tnt,tag=pr.target] run data modify entity @s Motion[0] set value 0.0d
+execute as @e[type=tnt,tag=pr.target] run data modify entity @s Motion[2] set value 0.0d
+
 # Double TNT boost
 # (this is done due to one TNT not launching high enough)
 execute at @e[type=tnt,tag=pr.target,nbt={Fuse:1s}] run summon tnt
