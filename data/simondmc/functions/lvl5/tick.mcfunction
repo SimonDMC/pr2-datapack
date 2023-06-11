@@ -51,9 +51,5 @@ execute if score sdmc.tnt sdmc.sys matches 100 run setblock ~-4 ~3 ~14 big_dripl
 # Restart timer if TNT exists past tick 100 (meaning TNT was shot during the refill animation)
 execute if score sdmc.tnt sdmc.sys matches 100.. if entity @e[type=tnt,tag=pr.target] run scoreboard players set sdmc.tnt sdmc.sys 1
 
-# Block off exit between TNT explosion and dripleaf replenishing to prevent being boosted by TNT directly into exit
-execute if score sdmc.tnt sdmc.sys matches 80 run fill ~-8 ~5 ~14 ~-7 ~8 ~12 barrier replace structure_void
-execute if score sdmc.tnt sdmc.sys matches 100 run fill ~-8 ~5 ~14 ~-7 ~8 ~12 structure_void replace barrier
-
 # Reset timer after animation finishes
 execute if score sdmc.tnt sdmc.sys matches 160 run scoreboard players reset sdmc.tnt sdmc.sys
