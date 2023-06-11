@@ -42,6 +42,9 @@ execute if score sdmc.tnt sdmc.sys matches 155 run setblock ~-4 ~12 ~14 chain
 execute if score sdmc.tnt sdmc.sys matches 160 run setblock ~-4 ~10 ~14 tnt
 execute if score sdmc.tnt sdmc.sys matches 160 run setblock ~-4 ~11 ~14 chain
 
+# Make sure dripleaf is down for launch
+execute if score sdmc.tnt sdmc.sys matches 80..100 run setblock ~-4 ~3 ~14 big_dripleaf[facing=east,tilt=full]
+
 # Replenish dripleaf in time for player to land on and jump off of
 execute if score sdmc.tnt sdmc.sys matches 100 run setblock ~-4 ~3 ~14 big_dripleaf[facing=east]
 
