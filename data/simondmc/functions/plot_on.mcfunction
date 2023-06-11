@@ -13,6 +13,11 @@ summon text_display ~7 ~31.65 ~7 {billboard:"center",default_background:1b,text:
 summon item ~2 ~1 ~19 {PickupDelay:32767,Age:-32768,Tags:["sdmc.display-item","sdmc.display-arrow"],Item:{id:"minecraft:arrow",Count:1b},Invulnerable:1b}
 summon text_display ~2 ~1.65 ~19 {billboard:"center",default_background:1b,text:'{"text":"Arrow"}',Tags:["sdmc.display-name"]}
 
+# Summon click blocking entities
+summon interaction ~-3 ~33 ~-33 {width:1.3f,height:1.3f,Tags:["sdmc.click-block"]}
+summon interaction ~15 ~32 ~21 {width:1.0f,height:2.0f,Tags:["sdmc.click-block"]}
+summon interaction ~12 ~32 ~19 {width:1.0f,height:2.0f,Tags:["sdmc.click-block"]}
+
 # Create necessary scoreboards
 scoreboard objectives add sdmc.sys dummy
 scoreboard objectives add sdmc.item-pickup-timer dummy
@@ -25,5 +30,3 @@ scoreboard objectives add sdmc.end-jingle dummy
 
 # Scoreboard constants
 scoreboard players set sdmc.const.1 sdmc.item-counter 1
-
-# TODO: Add plot name display text and/or credits

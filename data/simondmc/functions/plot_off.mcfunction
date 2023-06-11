@@ -8,5 +8,8 @@ kill @e[tag=sdmc.display-item]
 # Remove display item names
 kill @e[tag=sdmc.display-name]
 
+# Remove click blocking entities
+kill @e[tag=sdmc.click-block]
+
 # Remove pond axolotl
 kill @e[tag=sdmc.pond-axolotl]
