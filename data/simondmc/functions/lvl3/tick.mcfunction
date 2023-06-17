@@ -1,7 +1,7 @@
 ### Level 3
 
 # Refill barrel after a second of it being empty
-execute unless block ~27 ~32 ~22 barrel{Items:[{Slot:13b}]} run scoreboard players add sdmc.barrel sdmc.sys 1
+execute unless block ~27 ~32 ~20 barrel{Items:[{Slot:13b}]} run scoreboard players add sdmc.barrel sdmc.sys 1
 execute if score sdmc.barrel sdmc.sys matches 20.. run function simondmc:lvl3/reset_barrel
 execute if score sdmc.barrel sdmc.sys matches 20.. run scoreboard players reset sdmc.barrel sdmc.sys
 
