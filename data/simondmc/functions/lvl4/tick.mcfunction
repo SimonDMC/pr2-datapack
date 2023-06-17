@@ -3,6 +3,9 @@
 # Replace axolotl bucket
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:axolotl_bucket"}]}] unless entity @s[nbt={Inventory:[{id:"minecraft:axolotl_bucket",tag:{CanPlaceOn:["minecraft:big_dripleaf"]}}]}] run function simondmc:lvl4/replace_axolotl_bucket
 
+# Replace water bucket
+execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:water_bucket"}]}] unless entity @s[nbt={Inventory:[{id:"minecraft:water_bucket",tag:{display:{}}}]}] run function simondmc:lvl4/replace_water_bucket
+
 # Replace empty bucket
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bucket"}]}] unless entity @s[nbt={Inventory:[{id:"minecraft:bucket",tag:{CanPlaceOn:["minecraft:water"]}}]}] run function simondmc:lvl4/replace_empty_bucket
 
