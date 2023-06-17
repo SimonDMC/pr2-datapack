@@ -11,5 +11,8 @@ kill @e[tag=sdmc.display-name]
 # Remove click blocking entities
 kill @e[tag=sdmc.click-block]
 
+# Remove level text displays
+kill @e[tag=sdmc.floor]
+
 # Remove pond axolotl
 kill @e[tag=sdmc.pond-axolotl]
