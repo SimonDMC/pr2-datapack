@@ -25,7 +25,7 @@ execute as @e[type=tnt,tag=pr.target] run data modify entity @s Motion[2] set va
 execute at @e[type=tnt,tag=pr.target,nbt={Fuse:80s}] run kill @e[type=arrow,tag=pr.target,distance=..3]
 
 # TNT out of water safeguard
-# (should be fixed by "Make sure TNT cannot get stuck in chains" system, this is just a backup)
+# (should be fixed by "Prevent TNT getting stuck in chains" system, this is just a backup)
 execute as @e[type=tnt,tag=pr.target,nbt={Fuse:1s}] at @s unless block ~ ~ ~ big_dripleaf_stem[waterlogged=true] run kill @s 
 
 # Double TNT boost
@@ -47,7 +47,7 @@ execute if score sdmc.tnt sdmc.sys matches 155 run setblock ~-4 ~12 ~14 chain
 execute if score sdmc.tnt sdmc.sys matches 160 run setblock ~-4 ~10 ~14 tnt
 execute if score sdmc.tnt sdmc.sys matches 160 run setblock ~-4 ~11 ~14 chain
 
-# Make sure TNT cannot get stuck in chains
+# Prevent TNT getting stuck in chains
 execute if score sdmc.tnt sdmc.sys matches 145 run kill @e[type=tnt,tag=pr.target]
 execute if score sdmc.tnt sdmc.sys matches 150 run kill @e[type=tnt,tag=pr.target]
 execute if score sdmc.tnt sdmc.sys matches 155 run kill @e[type=tnt,tag=pr.target]

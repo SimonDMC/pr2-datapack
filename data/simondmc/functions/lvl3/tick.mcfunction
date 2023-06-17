@@ -24,7 +24,7 @@ tag @a[tag=pr.target] remove sdmc.on-basalt
 # Slow second dripleaf descent
 # (this system was put in place as a difficulty nerf due to the maneuver being way too difficult)
 execute positioned ~26.5 ~26 ~19.5 if entity @a[tag=pr.target,dx=1,dy=1,dz=1] run scoreboard players add sdmc.slow-leaf sdmc.sys 1
-# Make sure player doesn't fall through due to actual dripleaf descent
+# Prevent falling through due to actual dripleaf descent
 execute if score sdmc.slow-leaf sdmc.sys matches ..40 if block ~27 ~26 ~20 big_dripleaf[tilt=full] positioned ~26.5 ~26 ~19.5 as @a[tag=pr.target,dx=1,dy=1,dz=1] at @s run tp @s ~ ~.2 ~
 execute unless score sdmc.slow-leaf sdmc.sys matches 20.. run setblock ~27 ~26 ~20 big_dripleaf
 execute if score sdmc.slow-leaf sdmc.sys matches 20..40 run setblock ~27 ~26 ~20 big_dripleaf[tilt=partial]

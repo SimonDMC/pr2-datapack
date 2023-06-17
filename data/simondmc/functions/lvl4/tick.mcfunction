@@ -27,7 +27,6 @@ execute as @e[type=axolotl,tag=pr.target,tag=!sdmc.pond-axolotl] if score @s sdm
 
 # Prevent stealing waterfall
 setblock ~14 ~32 ~22 water
-setblock ~14 ~33 ~23 water
 
 # Prevent skipping level by smuggling a loaded crossbow out of level 2
 execute positioned ~11 ~31 ~14 run kill @e[type=arrow,tag=pr.target,distance=..3]
