@@ -18,6 +18,8 @@ execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s 
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-.1 ~ mud run tag @s add sdmc.on-basalt
 # Also clear if standing in a structure void (above edges of basalt, no easy way of detecting otherwise)
 execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~ ~ structure_void run tag @s add sdmc.on-basalt
+# Clear on edge at the corner of the up arrow block (~27 ~25 ~20), no structure block because dripleaf stem
+execute as @a[tag=pr.target,nbt={Inventory:[{id:"minecraft:bone_meal"}]}] at @s if block ~ ~-2.1 ~ dead_bubble_coral_fan run tag @s add sdmc.on-basalt
 execute as @a[tag=pr.target,tag=sdmc.on-basalt] run function simondmc:lvl3/clear_bone_meal
 tag @a[tag=pr.target] remove sdmc.on-basalt
 

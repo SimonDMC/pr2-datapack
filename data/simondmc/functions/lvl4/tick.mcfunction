@@ -32,9 +32,9 @@ setblock ~14 ~32 ~22 water
 execute positioned ~11 ~31 ~14 run kill @e[type=arrow,tag=pr.target,distance=..3]
 
 # Prevent smuggling an axolotl bucket out of this level (inventory)
-execute positioned ~8 ~29 ~12 as @a[dy=5,dz=5,tag=pr.target,nbt={Inventory:[{id:"minecraft:axolotl_bucket"}]}] run function simondmc:lvl4/clear_axolotl_bucket
-execute positioned ~24 ~30 ~10 as @a[dy=5,dz=3,tag=pr.target,nbt={Inventory:[{id:"minecraft:axolotl_bucket"}]}] run function simondmc:lvl4/clear_axolotl_bucket
+execute positioned ~8 ~29 ~11 as @a[dy=5,dz=7,tag=pr.target,nbt={Inventory:[{id:"minecraft:axolotl_bucket"}]}] run function simondmc:lvl4/clear_axolotl_bucket
+execute positioned ~24 ~30 ~9 as @a[dy=5,dz=5,tag=pr.target,nbt={Inventory:[{id:"minecraft:axolotl_bucket"}]}] run function simondmc:lvl4/clear_axolotl_bucket
 
 # Prevent smuggling an axolotl bucket out of this level (item)
-execute positioned ~8 ~29 ~12 as @e[type=item,dy=5,dz=5,tag=pr.target,nbt={Item:{id:"minecraft:axolotl_bucket"}}] run data merge entity @s {Item:{id:"minecraft:water_bucket",Count:1b,tag:{CanPlaceOn:[]}}}
-execute positioned ~24 ~30 ~10 as @e[type=item,dy=5,dz=3,tag=pr.target,nbt={Item:{id:"minecraft:axolotl_bucket"}}] run data merge entity @s {Item:{id:"minecraft:water_bucket",Count:1b,tag:{CanPlaceOn:[]}}}
+execute positioned ~8 ~29 ~11 as @e[type=item,dy=5,dz=7,tag=pr.target,nbt={Item:{id:"minecraft:axolotl_bucket"}}] run data merge entity @s {Item:{id:"minecraft:water_bucket",Count:1b,tag:{CanPlaceOn:[]}}}
+execute positioned ~24 ~30 ~9 as @e[type=item,dy=5,dz=5,tag=pr.target,nbt={Item:{id:"minecraft:axolotl_bucket"}}] run data merge entity @s {Item:{id:"minecraft:water_bucket",Count:1b,tag:{CanPlaceOn:[]}}}
