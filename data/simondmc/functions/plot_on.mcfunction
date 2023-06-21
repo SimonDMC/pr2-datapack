@@ -31,6 +31,9 @@ summon text_display ~19.3 ~29.5 ~14 {Rotation:[270F,0F],Tags:["sdmc.floor","sdmc
 summon text_display ~2.2 ~ ~14 {Rotation:[270F,0F],Tags:["sdmc.floor","sdmc.floor-5"],transformation:{left_rotation:[-0.707f,0f,0f,0.707f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[2.5f,2.5f,2.5f]},text:'{"text":"Level 5:\\nThe Final Blow","color":"#FFFFFF"}',background:16711680}
 summon text_display ~25.5 ~29 ~-1 {Tags:["sdmc.floor","sdmc.floor-s"],transformation:{left_rotation:[-0.707f,0f,0f,0.707f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[2.5f,2.5f,2.5f]},text:'{"text":"Secret:\\nThe Float!","color":"#7D0208"}',background:16711680}
 
+# Summon finish text display
+summon text_display ~-15.49 ~6.1 ~13 {default_background:0b,Rotation:[-90F,0F],Tags:["sdmc.finish-title"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[3f,3f,3f]},text:'{"text":"ꜰɪɴɪѕʜ","color":"white"}',background:16711680}
+
 # Create necessary scoreboards
 scoreboard objectives add sdmc.sys dummy
 scoreboard objectives add sdmc.item-pickup-timer dummy

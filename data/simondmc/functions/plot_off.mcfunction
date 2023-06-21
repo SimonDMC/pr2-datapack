@@ -17,5 +17,8 @@ kill @e[tag=sdmc.bone-meal-click]
 # Remove level text displays
 kill @e[tag=sdmc.floor]
 
+# Remove finish text display
+kill @e[tag=sdmc.finish-title]
+
 # Remove pond axolotl
 kill @e[tag=sdmc.pond-axolotl]
