@@ -20,6 +20,9 @@ summon interaction ~-3 ~33 ~-33 {width:1.3f,height:1.3f,Tags:["sdmc.click-block"
 summon interaction ~15 ~32 ~21 {width:1.0f,height:2.0f,Tags:["sdmc.click-block"]}
 summon interaction ~12 ~32 ~19 {width:1.0f,height:2.0f,Tags:["sdmc.click-block"]}
 
+# Summon bone meal click entity
+summon interaction ~27 ~25 ~17 {width:1.2f,height:2f,Tags:["sdmc.bone-meal-click"]}
+
 # Summon level text displays
 summon text_display ~1 ~27 ~-11.5 {Rotation:[180F,0F],Tags:["sdmc.floor","sdmc.floor-1"],transformation:{left_rotation:[-0.707f,0f,0f,0.707f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[3f,3f,3f]},text:'{"text":"Level 1:\\nThe Drop","color":"#C4C4C4"}',background:16711680} 
 summon text_display ~9 ~31 ~.3 {Rotation:[90F,0F],Tags:["sdmc.floor","sdmc.floor-2"],transformation:{left_rotation:[-0.707f,0f,0f,0.707f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[2.5f,2.5f,2.5f]},text:'{"text":"Level 2:\\nThe Chute","color":"#C4C4C4"}',background:16711680}
